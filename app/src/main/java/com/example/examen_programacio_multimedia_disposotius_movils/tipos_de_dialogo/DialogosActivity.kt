@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import com.example.examen_programacio_multimedia_disposotius_movils.R
 import com.example.tema6app6.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -57,7 +58,11 @@ class MainActivity : AppCompatActivity() {
                     //Código a ejecutar en caso de Aceptar
                     dialog.cancel()
                 })
-                .setCancelable(false)//No podrá desaparecer el diálogo por ningún motivo
+                .setNegativeButton("Cancelar", DialogInterface.OnClickListener { dialog, i ->
+                    //Código a ejecutar en caso de Aceptar
+                    dialog.cancel()
+                })
+                .setCancelable(false)//No podrá desaparecer el diálogo a no ser que se interactue con él
                 .show()
         }
     }
